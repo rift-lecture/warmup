@@ -12,8 +12,8 @@ This is an LLVM playground. It should provide you a sandbox to play with your fi
 
 In warmup.cpp you will find two functions:
 
-1) makeLLVMModule
-1) compile
+1. makeLLVMModule
+1. compile
 
 The first one create an LLVM module, which represents one compilation unit. In this module we use the C++ API of LLVM to construct the intermediate representation (IR) of a function called "aFun". This function takes one int argument and returns it. I.e. the function is equivalent to:
 
