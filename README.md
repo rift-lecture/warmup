@@ -15,7 +15,7 @@ In warmup.cpp you will find two functions:
 1. makeLLVMModule
 1. compile
 
-The first one create an LLVM module, which represents one compilation unit. In this module we use the C++ API of LLVM to construct the intermediate representation (IR) of a function called "aFun". This function takes one int argument and returns it. I.e. the function is equivalent to:
+The first one creates an LLVM module, which represents one compilation unit. In this module we use the C++ API of LLVM to construct the intermediate representation (IR) of a function called "aFun". This function takes one int argument and returns it. I.e. the function is equivalent to:
 
     int aFun(int n) { return n; }
 
@@ -36,3 +36,7 @@ In fib.ll you find the LLVM assembly implementation of fib. You can use:
     llc -march=cpp fib.ll
 
 to convert it into C++ API calls. This will create a fib.cpp which contains a makeLLVMModule function constructing the IR as given in the .ll file. You can plug this function into warmup.cpp.
+
+## Plug in some optimization passes
+
+Look at the LLVM legacy::PassManager infrastructure and try to run some optimization passes on the module before handing it to the JITEngine.
