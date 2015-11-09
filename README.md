@@ -31,11 +31,19 @@ Change the construction of aFun to make something more interesting, e.g. return 
 
 ## Plug in some generated code
 
+### From llvm assembly
+
 In fib.ll you find the LLVM assembly implementation of fib. You can use:
 
     llc -march=cpp fib.ll
 
 to convert it into C++ API calls. This will create a fib.cpp which contains a makeLLVMModule function constructing the IR as given in the .ll file. You can plug this function into warmup.cpp.
+
+### From C(++) code
+
+You can generate new .ll files from C(++) sources using clang:
+
+    clang --emit-llvm -S someFile.c
 
 ## Plug in some optimization passes
 
